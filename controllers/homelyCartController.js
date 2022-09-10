@@ -30,7 +30,7 @@ const getCart = async (req, res) => {
 
 // create new cart
 const addCart = async (req, res) => {
-    const {name, price, img} = req.body
+    const {name, price, img, qty} = req.body
 
   let emptyFields = []
 
@@ -50,7 +50,7 @@ const addCart = async (req, res) => {
   // add doc to db
   try {
     const user_id = req.user._id
-    const cart = await Cart.create({name, price, img, user_id})
+    const cart = await Cart.create({name, price, img, qty, user_id})
     res.status(200).json(cart)
   } catch (error) {
     res.status(400).json({error: error.message})

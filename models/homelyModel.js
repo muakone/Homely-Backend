@@ -11,6 +11,10 @@ const homelySchema = new Schema({
     type: Number,
     required: true
   },
+  qty: {
+    type: Number,
+    required: true
+  },
   img: {
     type: String,
     required: true
