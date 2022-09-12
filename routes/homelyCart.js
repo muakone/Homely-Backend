@@ -4,6 +4,7 @@ const {
   getCarts,
   getCart,
   deleteCart,
+  deleteUserCart,
   updateCart
 } = require('../controllers/homelyCartController')
 const requireAuth = require('../middleware/requireAuth')
@@ -24,6 +25,9 @@ router.post('/', addCart)
 
 // DELETE a workout
 router.delete('/:id', deleteCart)
+
+// DELETE a user_id
+router.delete('/user/:user_id', deleteUserCart)
 
 // UPDATE a workout
 router.patch('/:id', updateCart)

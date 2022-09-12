@@ -74,6 +74,20 @@ const deleteCart = async (req, res) => {
   res.status(200).json(cart)
 }
 
+// delete a user id
+const deleteUserCart = async (req, res) => {
+    const { user_id } = req.params
+  
+  
+    const cart = await Cart.deleteMany({user_id: user_id})
+  
+    if (!cart) {
+      return res.status(400).json({error: 'No such cart'})
+    }
+  
+    res.status(200).json(cart)
+  }
+
 // update a cart
 const updateCart = async (req, res) => {
   const { id } = req.params
@@ -99,5 +113,6 @@ module.exports = {
   getCart,
   addCart,
   deleteCart,
-  updateCart
+  updateCart,
+  deleteUserCart
 }
