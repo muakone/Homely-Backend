@@ -31,7 +31,7 @@ const getFood = async (req, res) => {
 
 // create new workout
 const createFood = async (req, res) => {
-  const {name, price, img, qty} = req.body
+  const {name, price, img, qty, category} = req.body
 
   let emptyFields = []
 
@@ -48,7 +48,7 @@ const createFood = async (req, res) => {
   // add doc to db
   try {
     //const user_id = req.user._id
-    const food = await Homely.create({name, price, img, qty})
+    const food = await Homely.create({name, price, img, qty, category})
     res.status(200).json(food)
   } catch (error) {
     res.status(400).json({error: error.message})
