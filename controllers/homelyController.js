@@ -1,7 +1,7 @@
 const Homely = require('../models/homelyModel')
 const mongoose = require('mongoose')
 
-// get all workouts
+// get all dishes
 const getFoods = async (req, res) => {
   //const user_id = req.user._id
 
@@ -10,7 +10,7 @@ const getFoods = async (req, res) => {
   res.status(200).json(food)
 }
 
-// get a single workout
+// get a single dish
 const getFood = async (req, res) => {
   const { id } = req.params
 
@@ -29,7 +29,7 @@ const getFood = async (req, res) => {
 
 
 
-// create new workout
+// create new dish
 const createFood = async (req, res) => {
   const {name, price, img, qty, category} = req.body
 
@@ -55,7 +55,7 @@ const createFood = async (req, res) => {
   }
 }
 
-// delete a workout
+// delete a dish
 const deleteFood = async (req, res) => {
   const { id } = req.params
 
@@ -72,7 +72,7 @@ const deleteFood = async (req, res) => {
   res.status(200).json(food)
 }
 
-// update a workout
+// update a dish
 const updateFood = async (req, res) => {
   const { id } = req.params
 

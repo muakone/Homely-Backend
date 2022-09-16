@@ -3,7 +3,6 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const workoutRoutes = require("./routes/workouts");
 const homelyRoutes = require("./routes/homely");
 const userRoutes = require("./routes/user");
 const cartRoutes = require("./routes/homelyCart")
@@ -21,7 +20,6 @@ app.use((req, res, next) => {
 });
 
 // routes
-app.use("/api/workouts", workoutRoutes);
 app.use("/api/homely", homelyRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/cart", cartRoutes);
